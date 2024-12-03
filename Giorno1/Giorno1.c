@@ -36,7 +36,7 @@ void quicksort(int array[], int inizio, int fine) {
 }
 
 int main(){
-    int number1, number2, i, j=0, risultato, parziale, count=0;
+    int number1, number2, i=0, j=0, risultato, parziale, count=0;
     int array1[1000];
     int array2[1000];
 
