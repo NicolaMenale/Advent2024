@@ -5,29 +5,35 @@
 #define MAX_LEN 8 // Lunghezza massima di una riga
 
 bool Crescente(int numeri[], int count){
+    int error = 0;
     for (int i = 0; i < count - 1; i++) {
         if (numeri[i] > numeri[i + 1] || numeri[i] == numeri[i + 1]) {
-            return false; // Trovato un elemento fuori ordine
+            return false;
         }
     }
+    
     return true; // Tutti gli elementi sono in ordine crescente
 }
 
 bool Decrescente(int numeri[], int count){
+    int error = 0;
     for (int i = 0; i < count - 1; i++) {
         if (numeri[i] < numeri[i + 1] || numeri[i] == numeri[i + 1]) {
-            return false; // Trovato un elemento fuori ordine
+            return false;
         }
     }
+
     return true; // Tutti gli elementi sono in ordine crescente
 }
 
 bool Differenza(int numeri[], int count){
+    int error = 0;
     for (int i = 0; i < count - 1; i++) {
-        if (abs(numeri[i] - numeri[i + 1]) > 3) {
-            return false; // Trovato un elemento fuori ordine
+        if (abs(numeri[i] - numeri[i + 1]) > 3 || abs(numeri[i] - numeri[i + 1]) == 0) {
+            return false;
         }
     }
+
     return true; // Tutti gli elementi sono in ordine crescente
 }
 
@@ -59,7 +65,7 @@ int main(){
         {
             printf("%d ", numeri[i]);
         }
-        printf("count:%d \n", count);
+        printf("count:%d ", count);
         
         if (Crescente(numeri, count)) {
             if (Differenza(numeri, count))
@@ -73,8 +79,9 @@ int main(){
             }
         }
         else{
-            printf("Sbagliato\n");
+            printf("Sbagliato");
         }
+        printf("\n");
     }
 
     printf("Risultato: %d", risultato);
